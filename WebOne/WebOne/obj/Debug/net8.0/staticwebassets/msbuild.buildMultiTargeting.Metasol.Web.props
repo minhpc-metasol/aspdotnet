@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Metasol.Web.props" />
+</Project>

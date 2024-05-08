@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Metasol.Repository/1.0.0": {
+        "dependencies": {
+          "Metasol.Model": "1.0.0"
+        },
+        "runtime": {
+          "Metasol.Repository.dll": {}
+        }
+      },
+      "Metasol.Model/1.0.0": {
+        "runtime": {
+          "Metasol.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Metasol.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Metasol.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

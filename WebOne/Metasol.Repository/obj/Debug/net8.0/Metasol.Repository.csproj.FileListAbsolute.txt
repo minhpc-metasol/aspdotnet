@@ -1,0 +1,16 @@
+D:\Train .Net\WebOne\Metasol.Repository\bin\Debug\net8.0\Metasol.Repository.deps.json
+D:\Train .Net\WebOne\Metasol.Repository\bin\Debug\net8.0\Metasol.Repository.dll
+D:\Train .Net\WebOne\Metasol.Repository\bin\Debug\net8.0\Metasol.Repository.pdb
+D:\Train .Net\WebOne\Metasol.Repository\bin\Debug\net8.0\Metasol.Model.dll
+D:\Train .Net\WebOne\Metasol.Repository\bin\Debug\net8.0\Metasol.Model.pdb
+D:\Train .Net\WebOne\Metasol.Repository\obj\Debug\net8.0\Metasol.Repository.csproj.AssemblyReference.cache
+D:\Train .Net\WebOne\Metasol.Repository\obj\Debug\net8.0\Metasol.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Train .Net\WebOne\Metasol.Repository\obj\Debug\net8.0\Metasol.Repository.AssemblyInfoInputs.cache
+D:\Train .Net\WebOne\Metasol.Repository\obj\Debug\net8.0\Metasol.Repository.AssemblyInfo.cs
+D:\Train .Net\WebOne\Metasol.Repository\obj\Debug\net8.0\Metasol.Repository.csproj.CoreCompileInputs.cache
+D:\Train .Net\WebOne\Metasol.Repository\obj\Debug\net8.0\Metasol.Repository.sourcelink.json
+D:\Train .Net\WebOne\Metasol.Repository\obj\Debug\net8.0\Metasol..9FB1DF76.Up2Date
+D:\Train .Net\WebOne\Metasol.Repository\obj\Debug\net8.0\Metasol.Repository.dll
+D:\Train .Net\WebOne\Metasol.Repository\obj\Debug\net8.0\refint\Metasol.Repository.dll
+D:\Train .Net\WebOne\Metasol.Repository\obj\Debug\net8.0\Metasol.Repository.pdb
+D:\Train .Net\WebOne\Metasol.Repository\obj\Debug\net8.0\ref\Metasol.Repository.dll

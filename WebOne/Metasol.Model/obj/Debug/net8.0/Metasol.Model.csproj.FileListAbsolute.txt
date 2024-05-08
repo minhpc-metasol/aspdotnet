@@ -1,0 +1,12 @@
+D:\Train .Net\WebOne\Metasol.Model\bin\Debug\net8.0\Metasol.Model.deps.json
+D:\Train .Net\WebOne\Metasol.Model\bin\Debug\net8.0\Metasol.Model.dll
+D:\Train .Net\WebOne\Metasol.Model\bin\Debug\net8.0\Metasol.Model.pdb
+D:\Train .Net\WebOne\Metasol.Model\obj\Debug\net8.0\Metasol.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\Train .Net\WebOne\Metasol.Model\obj\Debug\net8.0\Metasol.Model.AssemblyInfoInputs.cache
+D:\Train .Net\WebOne\Metasol.Model\obj\Debug\net8.0\Metasol.Model.AssemblyInfo.cs
+D:\Train .Net\WebOne\Metasol.Model\obj\Debug\net8.0\Metasol.Model.csproj.CoreCompileInputs.cache
+D:\Train .Net\WebOne\Metasol.Model\obj\Debug\net8.0\Metasol.Model.sourcelink.json
+D:\Train .Net\WebOne\Metasol.Model\obj\Debug\net8.0\Metasol.Model.dll
+D:\Train .Net\WebOne\Metasol.Model\obj\Debug\net8.0\refint\Metasol.Model.dll
+D:\Train .Net\WebOne\Metasol.Model\obj\Debug\net8.0\Metasol.Model.pdb
+D:\Train .Net\WebOne\Metasol.Model\obj\Debug\net8.0\ref\Metasol.Model.dll
