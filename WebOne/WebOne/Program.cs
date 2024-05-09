@@ -1,8 +1,16 @@
+using Metasol.Repository;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddCors();
+builder.Services.AddDbContext<MetashopContext>(option =>
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("MetasolConnection"));
+});
 
 var app = builder.Build();
 

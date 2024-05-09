@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Metasol.Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+013290178821152acdcc8a698f794231455cddda")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e342f561aabda37935ecf9939f190e7e14e27a89")]
 [assembly: System.Reflection.AssemblyProductAttribute("Metasol.Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Metasol.Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
