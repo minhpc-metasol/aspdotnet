@@ -1,0 +1,8 @@
+@Web_HostAddress = http://localhost:5162
+@Meta_HostAddress = http://localhost:44360
+
+GET {{Web_HostAddress}}/weatherforecast/
+Accept: application/json
+GET {{Meta_HostAddress}}/api/HangHoa/
+Accept: application/json
+###
