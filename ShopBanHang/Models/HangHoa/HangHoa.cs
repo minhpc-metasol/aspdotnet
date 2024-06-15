@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Models.ChiTietHoaDons;
 using Models.Common;
+using Models.Loais;
+using Models.NhaCungCaps;
 
-namespace Models.HangHoa
+namespace Models.HangHoas
 {
-    public class HangHoa: BaseEntity 
+    public class HangHoa : BaseEntity
     {
-        [Key]
-        public int MaHh { get; set; }
+        [Key] public int MaHh { get; set; }
 
         public string TenHh { get; set; } = null!;
 
@@ -27,7 +29,12 @@ namespace Models.HangHoa
         public int SoLanXem { get; set; }
 
         public string? MoTa { get; set; }
-
         public string MaNcc { get; set; } = null!;
+
+        public virtual Loai Loais { get; set; } = null!;
+
+        public virtual NhaCungCap NhaCungCaps { get; set; } = null!;
+
+        public virtual ICollection<ChiTietHD> ChiTietHoaDons { get; set; } = new List<ChiTietHD>();
     }
 }

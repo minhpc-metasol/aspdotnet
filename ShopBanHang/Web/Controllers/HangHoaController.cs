@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Models.HangHoa;
+using Models.HangHoas;
 using Repository.Common;
 using Service.HangHoaService;
 
@@ -19,7 +19,6 @@ public class HangHoaController:ControllerBase
         _logger = logger;
         _service = service;
     }
-    public static List<HangHoa> listHangHoas = new List<HangHoa>();
 
     [HttpGet]
     [Route("get-all")]
@@ -75,7 +74,7 @@ public class HangHoaController:ControllerBase
     }
     
     [HttpPut("update/{id:int}")]
-    public async Task<IActionResult> Edit(int id,[FromBody]HangHoa editHangHoa)
+    public async Task<IActionResult> Edit(int id,HangHoa editHangHoa)
     {
         if (id != editHangHoa.MaHh)
         {
@@ -103,7 +102,15 @@ public class HangHoaController:ControllerBase
     public async Task<IActionResult> Delete(int id)
     {
         //Update
-        var result = _service.DeleteHangHoa(id);
-        return await result ? Ok($"Xoa thanh cong ID: {id}.") : BadRequest($"Khong xoa duoc hang hoa ID: {id}.");
+        var result = await _service.DeleteHangHoa(id);
+        return result ? Ok($"Xoa thanh cong ID: {id}.") : BadRequest($"Khong xoa duoc hang hoa ID: {id}.");
+    }
+
+    [HttpPost]
+    [Route("get-hang-hoa-by-ma-loai")]
+    public async Task<IEnumerable<HangHoa>> GetHangHoaByMaLoai(HangHoa hangHoa)
+    {
+        var result = await _service.GetHangHoaByMaLoai(hangHoa.MaLoai);
+        return result;
     }
 }

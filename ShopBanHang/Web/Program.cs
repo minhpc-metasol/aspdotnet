@@ -1,6 +1,8 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Models.MetaDBContext;
 using Repository.Common;
+using Service.Configuration;
 using Service.HangHoaService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +29,13 @@ if(connectionString != null)
     builder.Services.AddDbContext<MetasolDBContext>(options =>
         options.UseSqlServer(connectionString));
 }
+//Automapper
+var mapperConfiguration = new MapperConfiguration(cfg =>
+{
+    cfg.AddProfile(typeof(MappingConfiguration));
+});
+var mapper = mapperConfiguration.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 var app = builder.Build();
 

@@ -1,6 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Models.MetaDBContext;
-using Models.HangHoa;
+using Models.HangHoas;
 using Models.Common;
 
 namespace Repository.HangHoaRepositorys;
@@ -13,4 +14,9 @@ public class HangHoaRepository : GenericRepository<HangHoa>,IHangHoaRepository
         
     }
 
+    public async Task<IEnumerable<HangHoa>> GetTheoMaLoai(int maLoai)
+    {
+        var listHang = await _dbContext.HangHoa.Where(x => x.MaLoai == maLoai).ToListAsync();
+        return listHang;
+    }
 }

@@ -22,7 +22,54 @@ namespace Models.Data
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Models.HangHoa.HangHoa", b =>
+            modelBuilder.Entity("Models.ChiTietHoaDons.ChiTietHoaDon", b =>
+                {
+                    b.Property<int>("MaCt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MaCt"));
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("DonGia")
+                        .HasColumnType("float");
+
+                    b.Property<double>("GiamGia")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("MaHd")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaHh")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdateBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("MaCt");
+
+                    b.HasIndex("MaHd");
+
+                    b.HasIndex("MaHh");
+
+                    b.ToTable("ChiTietHoaDon");
+                });
+
+            modelBuilder.Entity("Models.HangHoas.HangHoa", b =>
                 {
                     b.Property<int>("MaHh")
                         .ValueGeneratedOnAdd()
@@ -45,8 +92,14 @@ namespace Models.Data
                     b.Property<string>("Hinh")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("HoaDonMaHd")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<int>("LoaisMaLoai")
+                        .HasColumnType("int");
 
                     b.Property<int>("MaLoai")
                         .HasColumnType("int");
@@ -63,6 +116,10 @@ namespace Models.Data
 
                     b.Property<DateTime>("NgaySx")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("NhaCungCapsMaNcc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("SoLanXem")
                         .HasColumnType("int");
@@ -82,7 +139,233 @@ namespace Models.Data
 
                     b.HasKey("MaHh");
 
+                    b.HasIndex("HoaDonMaHd");
+
+                    b.HasIndex("LoaisMaLoai");
+
+                    b.HasIndex("NhaCungCapsMaNcc");
+
                     b.ToTable("HangHoa");
+                });
+
+            modelBuilder.Entity("Models.HoaDons.HoaDon", b =>
+                {
+                    b.Property<int>("MaHd")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MaHd"));
+
+                    b.Property<string>("CachThanhToan")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CachVanChuyen")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DiaChi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GhiChu")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HoTen")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MaKh")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaNv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MaTrangThai")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("NgayCan")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("NgayDat")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("NgayGiao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("PhiVanChuyen")
+                        .HasColumnType("float");
+
+                    b.Property<string>("UpdateBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("MaHd");
+
+                    b.ToTable("HoaDon");
+                });
+
+            modelBuilder.Entity("Models.Loais.Loai", b =>
+                {
+                    b.Property<int>("MaLoai")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MaLoai"));
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Hinh")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MoTa")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TenLoai")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TenLoaiAlias")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UpdateBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("MaLoai");
+
+                    b.ToTable("Loai");
+                });
+
+            modelBuilder.Entity("Models.NhaCungCaps.NhaCungCap", b =>
+                {
+                    b.Property<string>("MaNcc")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DiaChi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DienThoai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Logo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MoTa")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NguoiLienLac")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TenCongTy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UpdateBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("MaNcc");
+
+                    b.ToTable("NhaCungCap");
+                });
+
+            modelBuilder.Entity("Models.ChiTietHoaDons.ChiTietHoaDon", b =>
+                {
+                    b.HasOne("Models.HoaDons.HoaDon", "HoaDons")
+                        .WithMany()
+                        .HasForeignKey("MaHd")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Models.HangHoas.HangHoa", "HangHoas")
+                        .WithMany("ChiTietHoaDons")
+                        .HasForeignKey("MaHh")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HangHoas");
+
+                    b.Navigation("HoaDons");
+                });
+
+            modelBuilder.Entity("Models.HangHoas.HangHoa", b =>
+                {
+                    b.HasOne("Models.HoaDons.HoaDon", null)
+                        .WithMany("HangHoas")
+                        .HasForeignKey("HoaDonMaHd");
+
+                    b.HasOne("Models.Loais.Loai", "Loais")
+                        .WithMany("HangHoas")
+                        .HasForeignKey("LoaisMaLoai")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Models.NhaCungCaps.NhaCungCap", "NhaCungCaps")
+                        .WithMany("HangHoas")
+                        .HasForeignKey("NhaCungCapsMaNcc")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Loais");
+
+                    b.Navigation("NhaCungCaps");
+                });
+
+            modelBuilder.Entity("Models.HangHoas.HangHoa", b =>
+                {
+                    b.Navigation("ChiTietHoaDons");
+                });
+
+            modelBuilder.Entity("Models.HoaDons.HoaDon", b =>
+                {
+                    b.Navigation("HangHoas");
+                });
+
+            modelBuilder.Entity("Models.Loais.Loai", b =>
+                {
+                    b.Navigation("HangHoas");
+                });
+
+            modelBuilder.Entity("Models.NhaCungCaps.NhaCungCap", b =>
+                {
+                    b.Navigation("HangHoas");
                 });
 #pragma warning restore 612, 618
         }

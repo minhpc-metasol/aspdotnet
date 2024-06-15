@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Logging;
-using Models.HangHoa;
+using Models.HangHoas;
 using Repository.Common;
 
 namespace Service.HangHoaService;
@@ -49,5 +49,11 @@ public class HangHoaService : IHangHoaService
         await _unitOfWork.HangHoas.Delete(id);
         await _unitOfWork.CompleteAsync();
         return await Task.FromResult(true);
+    }
+
+    public async Task<IEnumerable<HangHoa>> GetHangHoaByMaLoai(int id)
+    {
+        var list =  await _unitOfWork.HangHoas.GetTheoMaLoai(id);
+        return list;
     }
 }

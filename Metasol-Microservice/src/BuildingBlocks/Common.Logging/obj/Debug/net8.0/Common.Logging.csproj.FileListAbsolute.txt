@@ -1,0 +1,13 @@
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\bin\Debug\net8.0\Common.Logging.deps.json
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\bin\Debug\net8.0\Common.Logging.dll
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\bin\Debug\net8.0\Common.Logging.pdb
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\obj\Debug\net8.0\Common.Logging.GeneratedMSBuildEditorConfig.editorconfig
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\obj\Debug\net8.0\Common.Logging.AssemblyInfoInputs.cache
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\obj\Debug\net8.0\Common.Logging.AssemblyInfo.cs
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\obj\Debug\net8.0\Common.Logging.csproj.CoreCompileInputs.cache
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\obj\Debug\net8.0\Common.Logging.sourcelink.json
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\obj\Debug\net8.0\Common.Logging.dll
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\obj\Debug\net8.0\refint\Common.Logging.dll
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\obj\Debug\net8.0\Common.Logging.pdb
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\obj\Debug\net8.0\ref\Common.Logging.dll
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\Common.Logging\obj\Debug\net8.0\Common.Logging.csproj.AssemblyReference.cache

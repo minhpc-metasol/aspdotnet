@@ -1,0 +1,12 @@
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\bin\Debug\net8.0\EnventBus.Messages.deps.json
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\bin\Debug\net8.0\EnventBus.Messages.dll
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\bin\Debug\net8.0\EnventBus.Messages.pdb
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\obj\Debug\net8.0\EnventBus.Messages.GeneratedMSBuildEditorConfig.editorconfig
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\obj\Debug\net8.0\EnventBus.Messages.AssemblyInfoInputs.cache
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\obj\Debug\net8.0\EnventBus.Messages.AssemblyInfo.cs
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\obj\Debug\net8.0\EnventBus.Messages.csproj.CoreCompileInputs.cache
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\obj\Debug\net8.0\EnventBus.Messages.sourcelink.json
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\obj\Debug\net8.0\EnventBus.Messages.dll
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\obj\Debug\net8.0\refint\EnventBus.Messages.dll
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\obj\Debug\net8.0\EnventBus.Messages.pdb
+D:\Train .Net\Metasol-Microservice\src\BuildingBlocks\EnventBus.Messages\obj\Debug\net8.0\ref\EnventBus.Messages.dll

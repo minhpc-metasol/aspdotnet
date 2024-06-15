@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Models.HangHoa;
+using Models.HangHoas;
 
 namespace Service.HangHoaService;
 
@@ -12,4 +12,6 @@ public interface IHangHoaService
     Task<bool> EditHangHoa(HangHoa hangHoa);
 
     Task<bool> DeleteHangHoa(int id);
+
+    Task<IEnumerable<HangHoa>> GetHangHoaByMaLoai(int id);
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ZT68zzuY1gqNl22NFp/+wT1RKYkk6bI/XdNy8FW55GLbifw+xnoHR432OhWC3Wf8skjWXAlXwZA08kPyynKJMw==",
+  "dgSpecHash": "CNYCSfFgfjDq2gVzLuEZXz6LDjK1M5eBHeBREj6W15b8nk8sTY+U/y84Z6jIv8SQ6zCL6epUjILCbG+Qjv2Kcg==",
   "success": true,
   "projectFilePath": "D:\\Train .Net\\ShopBanHang\\Service\\Service.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\minhp\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\minhp\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\minhp\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\minhp\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
