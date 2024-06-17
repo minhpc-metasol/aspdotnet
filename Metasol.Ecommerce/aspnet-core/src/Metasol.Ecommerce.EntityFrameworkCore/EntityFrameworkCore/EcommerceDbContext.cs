@@ -1,8 +1,8 @@
-﻿using Metasol.Ecommerce.Inventories;
+﻿using Metasol.Ecommerce.ProductAttributes;
+using Metasol.Ecommerce.Inventories;
 using Metasol.Ecommerce.InventoryTickets;
 using Metasol.Ecommerce.Manufacturers;
 using Metasol.Ecommerce.Orders;
-using Metasol.Ecommerce.ProductAttributes;
 using Metasol.Ecommerce.ProductCategories;
 using Metasol.Ecommerce.Products;
 using Metasol.Ecommerce.Promotions;
@@ -71,7 +71,7 @@ public class EcommerceDbContext :
     public DbSet<OrderTransaction> OrderTransactions { get; set; }
     public DbSet<ProductCategory> ProductCategories { get; set; }
 
-    public DbSet<Product.Product> Products { get; set; }
+    public DbSet<Products.Product> Products { get; set; }
     public DbSet<ProductAttributeDateTime> ProductAttributeDateTimes { get; set; }
     public DbSet<ProductAttributeDecimal> ProductAttributeDecimals { get; set; }
     public DbSet<ProductAttributeInt> ProductAttributeInts { get; set; }
@@ -112,11 +112,37 @@ public class EcommerceDbContext :
 
         /* Configure your own tables/entities inside here */
 
-        //builder.Entity<YourEntity>(b =>
-        //{
-        //    b.ToTable(EcommerceConsts.DbTablePrefix + "YourEntities", EcommerceConsts.DbSchema);
-        //    b.ConfigureByConvention(); //auto configure for the base class props
-        //    //...
-        //});
+        builder.ApplyConfiguration(new ProductAttributeConfiguration());
+
+        builder.ApplyConfiguration(new InventoryConfiguration());
+
+        builder.ApplyConfiguration(new InventoryTicketConfiguration());
+        builder.ApplyConfiguration(new InventoryTicketItemConfiguration());
+
+        builder.ApplyConfiguration(new ManufacturerConfiguration());
+
+        builder.ApplyConfiguration(new OrderConfiguration());
+        builder.ApplyConfiguration(new OrderItemConfiguration());
+        builder.ApplyConfiguration(new OrderTransactionConfiguration());
+
+        builder.ApplyConfiguration(new ProductCategoryConfiguration());
+
+        builder.ApplyConfiguration(new ProductConfiguration());
+        builder.ApplyConfiguration(new ProductLinkConfiguration());
+        builder.ApplyConfiguration(new ProductReviewConfiguration());
+        builder.ApplyConfiguration(new ProductTagConfiguration());
+        builder.ApplyConfiguration(new TagConfiguration());
+        builder.ApplyConfiguration(new ProductAttributeDateTimeConfiguration());
+        builder.ApplyConfiguration(new ProductAttributeDecimalConfiguration());
+        builder.ApplyConfiguration(new ProductAttributeIntConfiguration());
+        builder.ApplyConfiguration(new ProductAttributeTextConfiguration());
+        builder.ApplyConfiguration(new ProductAttributeVarcharConfiguration());
+
+        builder.ApplyConfiguration(new PromotionConfiguration());
+        builder.ApplyConfiguration(new PromotionCategoryConfiguration());
+        builder.ApplyConfiguration(new PromotionManufacturerConfiguration());
+        builder.ApplyConfiguration(new PromotionProductConfiguration());
+        builder.ApplyConfiguration(new PromotionUsageHistoryConfiguration());
+        // builder.ApplyConfiguration(new IdentitySettingConfiguration());
     }
 }

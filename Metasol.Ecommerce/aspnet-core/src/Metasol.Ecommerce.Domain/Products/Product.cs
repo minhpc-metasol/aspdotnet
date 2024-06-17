@@ -2,7 +2,7 @@ using System;
 using Metasol.Ecommerce.Product;
 using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Metasol.Ecommerce.Product;
+namespace Metasol.Ecommerce.Products;
 
 public class Product : AuditedAggregateRoot<Guid>
 {
