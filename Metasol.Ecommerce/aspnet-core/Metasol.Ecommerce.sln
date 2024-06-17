@@ -47,7 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{792C70
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "admin", "admin", "{BCFEED6C-AF67-4BC8-A7BD-432954786C59}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identity", "identity", "{BC2BDA3B-8631-4AD5-98AD-9F2380C573D7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auth", "auth", "{BC2BDA3B-8631-4AD5-98AD-9F2380C573D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metasol.Ecommerce.Admin.Application", "src\Metasol.Ecommerce.Admin.Application\Metasol.Ecommerce.Admin.Application.csproj", "{B8877FBB-2AFC-4195-B2BD-C8302927B63E}"
 EndProject

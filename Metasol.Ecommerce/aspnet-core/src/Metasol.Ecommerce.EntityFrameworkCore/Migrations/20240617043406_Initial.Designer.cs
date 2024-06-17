@@ -13,7 +13,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Metasol.Ecommerce.Migrations
 {
     [DbContext(typeof(EcommerceDbContext))]
-    [Migration("20240615033704_Initial")]
+    [Migration("20240617043406_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
