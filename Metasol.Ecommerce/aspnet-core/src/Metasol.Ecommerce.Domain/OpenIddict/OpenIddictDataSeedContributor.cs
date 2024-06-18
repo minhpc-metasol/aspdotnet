@@ -64,6 +64,12 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                 Name = "Ecommerce", DisplayName = "Ecommerce API", Resources = { "Ecommerce" }
             });
         }
+        if (await _openIddictScopeRepository.FindByNameAsync("Ecommerce.Admin") == null)
+        {
+            await _scopeManager.CreateAsync(new OpenIddictScopeDescriptor {
+                Name = "Ecommerce.Admin", DisplayName = "Ecommerce Admin API", Resources = { "Ecommerce.Admin" }
+            });
+        }
     }
 
     private async Task CreateApplicationsAsync()
