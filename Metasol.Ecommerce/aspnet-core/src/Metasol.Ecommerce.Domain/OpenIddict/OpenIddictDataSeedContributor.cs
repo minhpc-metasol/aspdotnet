@@ -74,58 +74,95 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
 
     private async Task CreateApplicationsAsync()
     {
-        var commonScopes = new List<string> {
+        var commonScopes = new List<string>
+        {
             OpenIddictConstants.Permissions.Scopes.Address,
             OpenIddictConstants.Permissions.Scopes.Email,
             OpenIddictConstants.Permissions.Scopes.Phone,
             OpenIddictConstants.Permissions.Scopes.Profile,
-            OpenIddictConstants.Permissions.Scopes.Roles,
-            "Ecommerce"
+            OpenIddictConstants.Permissions.Scopes.Roles
         };
 
+        var adminScopes = new List<string>();
+        adminScopes.AddRange(commonScopes);
+        adminScopes.Add("Ecommerce.Admin");
+
+        var clientScopes = new List<string>();
+        clientScopes.AddRange(commonScopes);
+        clientScopes.Add("Ecommerce");
+
         var configurationSection = _configuration.GetSection("OpenIddict:Applications");
-
-
-        //Console Test / Angular Client
-        var consoleAndAngularClientId = configurationSection["Ecommerce_App:ClientId"];
-        if (!consoleAndAngularClientId.IsNullOrWhiteSpace())
+        
+        //Web Client
+        var webClientId = configurationSection["Ecommerce_Web:ClientId"];
+        if (!webClientId.IsNullOrWhiteSpace())
         {
-            var consoleAndAngularClientRootUrl = configurationSection["Ecommerce_App:RootUrl"]?.TrimEnd('/');
+            var webClientRootUrl = configurationSection["Ecommerce_Web:RootUrl"].EnsureEndsWith('/');
+
+            /* TeduEcommerce_Web client is only needed if you created a tiered
+             * solution. Otherwise, you can delete this client. */
             await CreateApplicationAsync(
-                name: consoleAndAngularClientId!,
-                type: OpenIddictConstants.ClientTypes.Public,
+                name: webClientId,
+                type: OpenIddictConstants.ClientTypes.Confidential,
                 consentType: OpenIddictConstants.ConsentTypes.Implicit,
-                displayName: "Console Test / Angular Application",
-                secret: null,
-                grantTypes: new List<string> {
+                displayName: "Web Application",
+                secret: configurationSection["Ecommerce_Web:ClientSecret"] ?? "1q2w3e*",
+                grantTypes: new List<string> //Hybrid flow
+                {
                     OpenIddictConstants.GrantTypes.AuthorizationCode,
-                    OpenIddictConstants.GrantTypes.Password,
-                    OpenIddictConstants.GrantTypes.ClientCredentials,
-                    OpenIddictConstants.GrantTypes.RefreshToken
+                    OpenIddictConstants.GrantTypes.Implicit
                 },
-                scopes: commonScopes,
-                redirectUri: consoleAndAngularClientRootUrl,
-                clientUri: consoleAndAngularClientRootUrl,
-                postLogoutRedirectUri: consoleAndAngularClientRootUrl
+                scopes: clientScopes,
+                redirectUri: $"{webClientRootUrl}signin-oidc",
+                clientUri: webClientRootUrl,
+                postLogoutRedirectUri: $"{webClientRootUrl}signout-callback-oidc"
+            );
+        }
+        
+        //Admin Client
+        var adminWebClientId = configurationSection["Ecommerce_Admin:ClientId"];
+        if (!adminWebClientId.IsNullOrWhiteSpace())
+        {
+            var adminWebClientRootUrl = configurationSection["Ecommerce_Admin:RootUrl"].TrimEnd('/');
+
+            /* TeduEcommerce_Web client is only needed if you created a tiered
+             * solution. Otherwise, you can delete this client. */
+            await CreateApplicationAsync(
+                name: adminWebClientId,
+                type: OpenIddictConstants.ClientTypes.Confidential,
+                consentType: OpenIddictConstants.ConsentTypes.Implicit,
+                displayName: "Admin Application",
+                secret: configurationSection["Ecommerce_Admin:ClientSecret"] ?? "1q2w3e*",
+                grantTypes: new List<string> //Hybrid flow
+                {
+                    OpenIddictConstants.GrantTypes.Password,
+                    OpenIddictConstants.GrantTypes.RefreshToken,
+                    OpenIddictConstants.GrantTypes.Implicit
+                },
+                scopes: adminScopes,
+                redirectUri: adminWebClientRootUrl,
+                clientUri: adminWebClientRootUrl,
+                postLogoutRedirectUri: adminWebClientRootUrl
             );
         }
 
-
-
         // Swagger Client
-        var swaggerClientId = configurationSection["Ecommerce_Swagger:ClientId"];
+        var swaggerClientId = configurationSection["Ecommerce_Admin_Swagger:ClientId"];
         if (!swaggerClientId.IsNullOrWhiteSpace())
         {
-            var swaggerRootUrl = configurationSection["Ecommerce_Swagger:RootUrl"]?.TrimEnd('/');
+            var swaggerRootUrl = configurationSection["Ecommerce_Admin_Swagger:RootUrl"]?.TrimEnd('/');
 
             await CreateApplicationAsync(
                 name: swaggerClientId!,
                 type: OpenIddictConstants.ClientTypes.Public,
                 consentType: OpenIddictConstants.ConsentTypes.Implicit,
-                displayName: "Swagger Application",
+                displayName: "Swagger Admin Application",
                 secret: null,
-                grantTypes: new List<string> { OpenIddictConstants.GrantTypes.AuthorizationCode, },
-                scopes: commonScopes,
+                grantTypes: new List<string>
+                {
+                    OpenIddictConstants.GrantTypes.AuthorizationCode,
+                },
+                scopes: adminScopes,
                 redirectUri: $"{swaggerRootUrl}/swagger/oauth2-redirect.html",
                 clientUri: swaggerRootUrl
             );
